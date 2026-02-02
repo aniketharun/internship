@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Basics</title>
+</head>
+<body>
+
+  <h2>JavaScript Basics Training</h2>
+
+  <p id="info"></p>
+  <p id="details"></p>
+  <ul id="topics"></ul>
+
+  <script>
+    /* Constants */
+    const internName = "Aniketh";
+    const trainingType = "JavaScript Basics";
+
+    /* Variables */
+    let trainingDay = 1;
+    let isTrainingActive = true;
+
+    /* Display basic information */
+    document.getElementById("info").innerText =
+      "Intern Name: " + internName;
+
+    /* Conditional logic */
+    if (isTrainingActive) {
+      document.getElementById("details").innerText =
+        trainingType + " - Day " + trainingDay + " is active.";
+    } else {
+      document.getElementById("details").innerText =
+        "Training is not active.";
+    }
+
+    /* Array of topics */
+    const topicsCovered = [
+      "Variables and Constants",
+      "Data Types",
+      "Conditional Statements",
+      "Loops"
+    ];
+
+    /* Loop to display topics */
+    const list = document.getElementById("topics");
+
+    for (let i = 0; i < topicsCovered.length; i++) {
+      const item = document.createElement("li");
+      item.innerText = topicsCovered[i];
+      list.appendChild(item);
+    }
+  </script>
+
+</body>
+</html>

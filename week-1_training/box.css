@@ -1,0 +1,83 @@
+/* Page base styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fff8e6;   /* light yellow */
+}
+
+/* Header styling */
+header {
+  background-color: #8b5a2b;   /* warm brown */
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Container */
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Product card */
+.product {
+  display: inline-block;
+  vertical-align: top;
+
+  background-color: #fff3d6;   /* cream */
+  border: 2px solid #a47148;   /* soft brown */
+
+  width: 260px;
+  padding: 20px;
+  margin: 12px;
+
+  box-sizing: border-box;
+
+  /* SIMPLE animation */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect (animation) */
+.product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Product title */
+.product h2 {
+  margin-top: 0;
+  color: #6b3e1e;              /* dark brown */
+}
+
+/* Price */
+.price {
+  font-weight: bold;
+  color: #8b5a2b;
+  margin-top: 10px;
+}
+
+/* Footer */
+footer {
+  background-color: #8b5a2b;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+}
+
+/* =========================
+   RESPONSIVENESS (BASIC)
+   ========================= */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .product {
+    width: 45%;   /* 2 products per row */
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .product {
+    width: 90%;   /* 1 product per row */
+  }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Async Await Practice</title>
+</head>
+<body>
+
+  <h2>Async / Await Training</h2>
+
+  <button onclick="fetchTrainingStatus()">Check Training Status</button>
+  <p id="status"></p>
+
+  <script>
+    async function fetchTrainingStatus() {
+      let statusElement = document.getElementById("status");
+
+      statusElement.innerText = "Checking training status...";
+
+      // Simulate API delay
+      await new Promise(resolve => setTimeout(resolve, 2000));
+
+      let trainingCompleted = true;
+
+      if (trainingCompleted) {
+        statusElement.innerText =
+          "Training completed successfully using async/await.";
+      } else {
+        statusElement.innerText =
+          "Training still in progress.";
+      }
+    }
+  </script>
+
+</body>
+</html>

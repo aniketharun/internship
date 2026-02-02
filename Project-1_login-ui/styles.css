@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+.auth-wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+/* Left Section */
+.auth-visual {
+  flex: 1;
+  background: linear-gradient(135deg, #e7d8c9, #f5eee6);
+  padding: 60px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-visual::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('store_bg.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+  /* Very much faded but visible */
+  z-index: 0;
+}
+
+.auth-visual h2 {
+  font-family: "Lucida Handwriting", "Lucida Calligraphy", cursive;
+  font-size: 32px;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  color: #4b2e1e;
+}
+
+.auth-visual p {
+  font-size: 16px;
+  max-width: 400px;
+  line-height: 1.5;
+  color: #5c4033;
+}
+
+.auth-visual h2,
+.auth-visual p {
+  position: relative;
+  z-index: 1;
+}
+
+/* Decorative background elements */
+/* auth-visual relative/overflow-hidden already applied above */
+
+.decor {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.25;
+}
+
+/* Large soft circle */
+.decor-one {
+  width: 260px;
+  height: 260px;
+  background-color: #d6c2aa;
+  /* light beige */
+  top: -60px;
+  left: -60px;
+}
+
+/* Smaller accent circle */
+.decor-two {
+  width: 180px;
+  height: 180px;
+  background-color: #c9ad8d;
+  /* warm light brown */
+  bottom: -40px;
+  right: -40px;
+}
+
+
+/* Right Section */
+.auth-form {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  margin-bottom: 5px;
+  color: #1f2937;
+}
+
+.auth-logo {
+  max-width: 200px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.corner-icon {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  height: 50px;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+
+.subtitle {
+  color: #6b7280;
+  margin-bottom: 25px;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background-color: #f3f4f6;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.tab.active {
+  background-color: #c2a27c;
+  /* light brown */
+  color: #3b2f2f;
+}
+
+.form {
+  display: none;
+}
+
+.form.active {
+  display: block;
+}
+
+.password-field {
+  position: relative;
+  max-width: 320px;
+  margin: auto;
+}
+
+.password-field input {
+  width: 100%;
+  padding: 12px 44px 12px 12px;
+}
+
+.eye {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 16px;
+  color: #8b5a2b;
+  user-select: none;
+}
+
+
+input {
+  width: 100%;
+  max-width: 320px;
+  /* narrower, cleaner */
+  padding: 12px;
+  margin: auto;
+  display: block;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+
+input:focus {
+  border-color: #c2a27c;
+  outline: none;
+}
+
+/* Hide browser's default password reveal icon */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+
+.primary-btn {
+  margin-top: 10px;
+  padding: 12px;
+  width: 100%;
+  background-color: #c2a27c;
+  /* light brown */
+  color: #3b2f2f;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  max-width: 320px;
+  margin: 10px auto 0;
+  display: block;
+}
+
+.primary-btn:hover {
+  background-color: #b08a60;
+}
+
+.error {
+  font-size: 12px;
+  color: #dc2626;
+  margin-bottom: 8px;
+}
+
+.status {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Fade-in */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation */
+.auth-visual h2,
+.auth-visual p,
+.auth-form {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .auth-wrapper {
+    flex-direction: column;
+  }
+
+  .auth-visual {
+    height: 200px;
+  }
+}
+
+.forgot-link {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  display: block;
+  text-align: right;
+  margin-top: 5px;
+  font-size: 13px;
+  color: #c2a27c;
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}

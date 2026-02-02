@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM & Events</title>
+</head>
+<body>
+
+  <h2>DOM Manipulation Practice</h2>
+
+  <p id="message">Click the button to update this text.</p>
+  <button onclick="updateMessage()">Update Message</button>
+  <button onclick="resetMessage()">Reset</button>
+
+  <script>
+    let defaultText = "Click the button to update this text.";
+
+    function updateMessage() {
+      document.getElementById("message").innerText =
+        "Text updated using JavaScript event handling.";
+    }
+
+    function resetMessage() {
+      document.getElementById("message").innerText = defaultText;
+    }
+  </script>
+
+</body>
+</html>

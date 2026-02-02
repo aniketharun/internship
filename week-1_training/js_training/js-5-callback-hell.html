@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Callback Hell Example</title>
+</head>
+<body>
+
+  <h2>Callback Hell Practice</h2>
+  <button onclick="startProcess()">Start Process</button>
+  <p id="status"></p>
+
+  <script>
+    function startProcess() {
+      document.getElementById("status").innerText =
+        "Starting training process...";
+
+      stepOne(function () {
+        stepTwo(function () {
+          stepThree(function () {
+            document.getElementById("status").innerText =
+              "Training process completed using callbacks.";
+          });
+        });
+      });
+    }
+
+    function stepOne(callback) {
+      setTimeout(function () {
+        document.getElementById("status").innerText =
+          "Step 1 completed";
+        callback();
+      }, 1000);
+    }
+
+    function stepTwo(callback) {
+      setTimeout(function () {
+        document.getElementById("status").innerText =
+          "Step 2 completed";
+        callback();
+      }, 1000);
+    }
+
+    function stepThree(callback) {
+      setTimeout(function () {
+        document.getElementById("status").innerText =
+          "Step 3 completed";
+        callback();
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>

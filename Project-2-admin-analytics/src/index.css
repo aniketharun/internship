@@ -1,0 +1,117 @@
+:root {
+  --bg-dark: #0a0c14;
+  --card-bg: #161a29;
+  --sidebar-bg: #0a0c14;
+  --accent-purple: #3b82f6;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0ab;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+}
+
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  background-color: var(--bg-dark);
+}
+
+.card-custom {
+  background-color: var(--card-bg) !important;
+  border: none;
+  border-radius: 16px;
+  color: white !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.card-custom .text-secondary {
+  color: #a0a0ab !important;
+}
+
+.card-custom:hover {
+  transform: translateY(-5px);
+}
+
+.glass-effect {
+  background: rgba(37, 37, 43, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sidebar {
+  width: 260px;
+  background-color: var(--sidebar-bg);
+  padding: 2rem 1rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-link-custom {
+  color: var(--text-secondary);
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.nav-link-custom:hover,
+.nav-link-custom.active {
+  background-color: var(--accent-purple);
+  color: white;
+}
+
+.nav-link-custom svg {
+  margin-right: 12px;
+}
+
+.navbar-custom {
+  background-color: var(--bg-dark);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-bar {
+  background-color: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  color: white;
+  width: 300px;
+}
+
+.search-bar:focus {
+  outline: none;
+  border-color: var(--accent-purple);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}

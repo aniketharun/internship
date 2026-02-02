@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Perona | Sign In</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <img src="icon_logo.png" class="corner-icon" alt="Branding Icon">
+  <div class="auth-wrapper">
+
+    <!-- Left Visual Section -->
+    <div class="auth-visual">
+      <div class="decor decor-one"></div>
+      <div class="decor decor-two"></div>
+
+      <h2>Welcome!</h2>
+      <p>
+        Curated pieces. Timeless energy.
+      </p>
+    </div>
+
+    <!-- Right Form Section -->
+    <div class="auth-form">
+      <img src="logo.png" alt="Perona Logo" class="auth-logo">
+      <p class="subtitle" style="display: none;">sewing a story</p>
+
+
+      <div class="tabs">
+        <button class="tab active" onclick="showLogin()">Login</button>
+        <button class="tab" onclick="showSignup()">Sign Up</button>
+      </div>
+
+      <!-- Login -->
+      <form id="loginForm" class="form active">
+        <input type="email" id="loginEmail" placeholder="Email address">
+        <small class="error" id="loginEmailError"></small>
+
+        <div class="password-field">
+          <input type="password" id="loginPassword" placeholder="Password">
+          <span class="eye" onclick="togglePassword('loginPassword', this)">👁️</span>
+        </div>
+        <small class="error" id="loginPasswordError"></small>
+        <a href="forgot-password.html" class="forgot-link">Forgot Password?</a>
+
+
+
+        <button type="submit" class="primary-btn">Sign In</button>
+        <p class="status" id="loginStatus"></p>
+      </form>
+
+      <!-- Signup -->
+      <form id="signupForm" class="form">
+        <input type="text" id="signupName" placeholder="Full name">
+        <small class="error" id="signupNameError"></small>
+
+        <input type="email" id="signupEmail" placeholder="Email address">
+        <small class="error" id="signupEmailError"></small>
+
+        <div class="password-field">
+          <input type="password" id="signupPassword" placeholder="Create password">
+          <span class="eye" onclick="togglePassword('signupPassword', this)">👁️</span>
+        </div>
+        <small class="error" id="signupPasswordError"></small>
+
+
+
+        <button type="submit" class="primary-btn">Create Account</button>
+        <p class="status" id="signupStatus"></p>
+      </form>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

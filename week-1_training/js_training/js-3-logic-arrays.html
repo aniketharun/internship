@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Arrays & Logic</title>
+</head>
+<body>
+
+  <h2>JavaScript Logic Practice</h2>
+
+  <button onclick="displayTasks()">Show Training Tasks</button>
+  <ul id="taskList"></ul>
+
+  <script>
+    let tasks = [
+      "Learn JavaScript basics",
+      "Practice DOM manipulation",
+      "Understand event handling",
+      "Explore async/await"
+    ];
+
+    function displayTasks() {
+      let list = document.getElementById("taskList");
+      list.innerHTML = "";
+
+      for (let i = 0; i < tasks.length; i++) {
+        let item = document.createElement("li");
+        item.innerText = tasks[i];
+        list.appendChild(item);
+      }
+    }
+  </script>
+
+</body>
+</html>
